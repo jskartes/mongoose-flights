@@ -63,17 +63,26 @@ section > h1 {
 #flights-list {
   display: grid;
   gap: 4px;
-  grid-template-columns: repeat(4, fit-content(50vw));
+  grid-template-columns: repeat(5, fit-content(50vw));
 }
 
-#flights-list > div {
+#flights-list > div,
+#flight-details > div {
   background-color: #666;
   padding: 4px 8px;
-}
+}  
 
-#flights-list > div.table-header {
+#flights-list > div.table-header,
+#flights-list > div.flight-detail-link,
+#flight-details > div.table-header {
   background-color: #222;
   font-weight: bold;
+}
+
+#flight-details {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: fit-content(50vw) fit-content(50vw);
 }
 
 form {
@@ -91,4 +100,9 @@ form > button {
   grid-column: span 2;
   margin: 20px auto;
   width: 100px;
+}
+
+#inset-form, #inset-form * {
+  display: inherit;
+  margin: 0;
 }
