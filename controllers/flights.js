@@ -16,6 +16,8 @@ function newFlight(req, res) {
 }
 
 async function create(req, res) {
+  if (req.body.departs === '') delete req.body.departs;
+  console.log(req.body);
   try {
     await Flight.create(req.body);
     res.redirect('/flights');

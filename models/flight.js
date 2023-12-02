@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const flightSchema = new mongoose.Schema({
   airline: {
     type: String,
-    enum: ['american', 'southwest', 'united']
+    enum: ['American', 'Southwest', 'United']
   },
   airport: {
     type: String,
-    enum: ['aus', 'den', 'dfw', 'lax', 'san'],
-    default: 'den'
+    enum: ['AUS', 'DEN', 'DFW', 'LAX', 'SAN'],
+    default: 'DEN'
   },
   flightNo: {
     type: Number,
@@ -18,9 +18,14 @@ const flightSchema = new mongoose.Schema({
   departs: {
     type: Date,
     default: () => {
-      const now = new Date().toString();
-      const yearFromNow = now.setFullYear(now.getFullYear() + 1);
-      return yearFromNow;
+      const now = new Date();
+      return new Date(
+        now.getFullYear() + 1,
+        now.getMonth(),
+        now.getDate(),
+        now.getHours(),
+        now.getMinutes()
+      );
     }
   }
 }, {

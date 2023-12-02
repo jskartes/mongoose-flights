@@ -54,14 +54,15 @@ section > h1 {
 #flights-list {
   display: grid;
   gap: 4px;
-  grid-template-columns: repeat(4, fit-content(20vw));
+  grid-template-columns: repeat(4, fit-content(50vw));
 }
 
 #flights-list > div {
+  background-color: #666;
   padding: 4px 8px;
 }
 
-.table-header {
+#flights-list > div.table-header {
   background-color: #222;
   font-weight: bold;
 }
