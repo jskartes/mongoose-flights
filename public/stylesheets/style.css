@@ -12,3 +12,54 @@ body {
 a {
   color: #00B7FF;
 }
+
+nav {
+  align-items: center;
+  background-color: #222;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  padding: 0 40px;
+  width: 100vw;
+}
+
+nav > span {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#nav-links > a:first-child {
+  margin-right: 20px;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 60px);
+  justify-content: center;
+}
+
+#home-page-title {
+  color: #bbb6;
+  font-size: 3em;
+}
+
+#flights-index > h1 {
+  margin-bottom: 30px;
+}
+
+#flights-list {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(4, fit-content(20vw));
+}
+
+#flights-list > div {
+  padding: 4px 8px;
+}
+
+.table-header {
+  background-color: #222;
+  font-weight: bold;
+}
