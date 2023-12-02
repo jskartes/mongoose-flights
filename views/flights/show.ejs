@@ -25,7 +25,7 @@
     </div>
     <div style='background-color: inherit'></div>
     <div style='background-color: #f005'>
-      Add Destination:<br/>
+      <strong>Add Destination:</strong><br/>
       <form
         id='inset-form'
         action='/flights/<%= flight._id %>/destinations'
@@ -41,6 +41,24 @@
         <input name='arrival' type='datetime-local'/>
         <button type='submit'>Submit</button>
       </form>
+    </div>
+    <div class='table-header'>Tickets Issued:</div>
+    <div>
+      <% if (tickets.length) { %>
+        <% tickets.forEach(ticket => { %>
+          <p>
+            <%= ticket.seat %> &bull;
+            $<%= ticket.price %>
+          </p>
+        <% }); %>
+      <% } %>
+    </div>
+    <div style='background-color: inherit'></div>
+    <div style='background-color: #f005'>
+      <a
+        href='/flights/<%= flight._id %>/tickets/new'
+        style='font-weight: bold'
+      >Issue New Ticket</a>
     </div>
   </div>
 </section>
