@@ -12,9 +12,11 @@
       <div><%= flight.airline %></div>
       <div><%= flight.airport %></div>
       <div><%= flight.flightNo %></div>
+      <% let now = new Date(); %>
       <div><%= flight.departs.toLocaleString() %></div>
     <% }); %>
   </div>
 </section>
+<div class='filler'></div>
 
 <%- include('../partials/footer') %>
