@@ -1,6 +1,12 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #444;
+  color: #bbb;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
