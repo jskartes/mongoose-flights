@@ -15,5 +15,16 @@ const flightSchema = new mongoose.Schema({
     min: 10,
     max: 9999
   },
-  departs: Date
+  departs: {
+    type: Date,
+    default: () => {
+      const now = new Date().toString();
+      const yearFromNow = now.setFullYear(now.getFullYear() + 1);
+      return yearFromNow;
+    }
+  }
+}, {
+  timestamps: true
 });
+
+module.exports = mongoose.model('Flight', flightSchema);
