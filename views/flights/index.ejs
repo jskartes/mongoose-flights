@@ -8,6 +8,12 @@
     <div class='table-header'>Airport</div>
     <div class='table-header'>Flight No.</div>
     <div class='table-header'>Departure Time</div>
+    <% flights.forEach(flight => { %>
+      <div><%= flight.airline %></div>
+      <div><%= flight.airport %></div>
+      <div><%= flight.flightNo %></div>
+      <div><%= flight.departs.toLocaleString() %></div>
+    <% }); %>
   </div>
 </section>
 

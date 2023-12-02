@@ -45,8 +45,10 @@ main {
   font-size: 3em;
 }
 
-#flights-index > h1 {
-  margin-bottom: 30px;
+section > h1 {
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
 }
 
 #flights-list {
@@ -62,4 +64,21 @@ main {
 .table-header {
   background-color: #222;
   font-weight: bold;
+}
+
+form {
+  display: grid;
+  column-gap: 12px;
+  grid-template-columns: fit-content(50vw) 30vw;
+  row-gap: 24px;
+}
+
+form > label {
+  text-align: right;
+}
+
+form > button {
+  grid-column: span 2;
+  margin: 20px auto;
+  width: 100px;
 }
