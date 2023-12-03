@@ -2,6 +2,27 @@
 
 <section id='create-ticket'>
   <h1>Create Ticket</h1>
+
+  <form action='/flights/<%= flight._id %>/tickets' method='POST'>
+    <label>Flight:</label>
+    <p class='form-field'>
+      <strong><%= flight.airline %> <%= flight.flightNo %></strong>
+    </p>
+
+    <label for='seat'>Seat:</label>
+    <input
+      class='form-field'
+      name='seat' type='text' required pattern='[1-9]\d?[A-F]'
+    />
+
+    <label for='price'>Price:</label>
+    <input 
+      class='form-field'
+      name='price' type='number' min='0'
+    />
+
+    <button type='submit'>Submit</button>
+  </form>
 </section>
 
 <%- include('../partials/footer') %>

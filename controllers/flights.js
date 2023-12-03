@@ -16,6 +16,10 @@ async function index(req, res) {
 async function show(req, res) {
   const flight = await Flight.findById(req.params.id);
   const tickets = await Ticket.find({ flight: flight._id });
+  
+          /*----- DEBUG -----*/
+          console.log(flight, tickets);
+  
   res.render('flights/show', { flight, tickets });
 }
 
@@ -25,7 +29,6 @@ function newFlight(req, res) {
 
 async function create(req, res) {
   if (req.body.departs === '') delete req.body.departs;
-  console.log(req.body);
   try {
     await Flight.create(req.body);
     res.redirect('/flights');
